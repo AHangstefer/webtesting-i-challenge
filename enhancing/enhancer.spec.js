@@ -1,10 +1,14 @@
+const { expect } = require('@jest/globals');
+const { describe } = require('yargs');
 const enhancer = require('./enhancer.js');
 // test away!
 
 
 // Items.
 // Items have name, durability and enhancement.
-//--should like like (name, durability, enhancement) when called
+//--should like like (name, durability, enhancement)
+// --or name(durability, enhancement) when called
+// -- name(0-100, 0-20)
 // The item's enhancement it's a number from 0 to 20.
 // The item's durability it's a number from 0 to 100.
 
@@ -37,3 +41,38 @@ const enhancer = require('./enhancer.js');
 // -- (e <16){
 //   (d-1)
 //}
+
+// It is calculated with the following equation:
+// AFR = (24 * 365) / MTBF (hr). MTBF 
+// (Mean time between failures)
+// refers to the average time during which a device
+//functions before it reaches the end of life. 2.
+
+describe("calculating unit tests", ()=> {
+    const enhancer = require("./enhancer")
+
+        test("repair", ()=> {
+            expect(enhancer.repair()).toBe()
+            expect(enhancer.repair()).toBe()
+            expect(enhancer.repair()).toBe()
+            expect(()=> enhancer.repair()).toThrow()
+
+        })
+
+
+        test("success", ()=> {
+            expect(enhancer.success()).toBe()
+            expect(enhancer.success()).toBe()
+            expect(enhancer.success()).toBe()
+            expect(()=> enhancer.success()).toThrow()
+
+        })
+
+        test("fail", ()=> {
+            expect(enhancer.fail()).toBe()
+            expect(enhancer.fail()).toBe()
+            expect(enhancer.fail()).toBe()
+            expect(()=> enhancer.fail()).toThrow()
+
+        })
+}
