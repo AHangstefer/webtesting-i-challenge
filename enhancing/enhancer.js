@@ -34,8 +34,12 @@ function fail(item) {
 // three and would be a good starting
 // point on this project.
 
-function repair(item) {
-  return { ...item };
+function repair(...item) {
+  //return { ...item };
+  if (item.slice(1).indexOf(0) > -1){
+    throw new Error("Can not divide by 0")
+  }
+  return item.slice(1).reduce((a,b)=> a/b, item[0] || 0)
 }
 
 

@@ -1,6 +1,6 @@
-const { expect } = require('@jest/globals');
-const { describe } = require('yargs');
-const enhancer = require('./enhancer.js');
+//const { expect } = require('@jest/globals');
+//const { describe } = require('yargs');
+//const enhancer = require('./enhancer.js');
 // test away!
 
 
@@ -51,28 +51,29 @@ const enhancer = require('./enhancer.js');
 describe("calculating unit tests", ()=> {
     const enhancer = require("./enhancer")
 
-        test("repair", ()=> {
-            expect(enhancer.repair()).toBe()
-            expect(enhancer.repair()).toBe()
-            expect(enhancer.repair()).toBe()
-            expect(()=> enhancer.repair()).toThrow()
+        it("repair", ()=> {
+            expect(enhancer.repair(200,2)).toBe(100)
+            expect(enhancer.repair(400,4)).toBe(100)
+            expect(enhancer.repair(600,6)).toBe(100)
+            //expect(()=> enhancer.repair(250,2)).toThrow()
 
         })
 
 
-        test("success", ()=> {
-            expect(enhancer.success()).toBe()
-            expect(enhancer.success()).toBe()
-            expect(enhancer.success()).toBe()
-            expect(()=> enhancer.success()).toThrow()
+        // test("success", ()=> {
+        //     expect(enhancer.success()).toBe()
+        //     expect(enhancer.success()).toBe()
+        //     expect(enhancer.success()).toBe()
+        //     expect(()=> enhancer.success()).toThrow()
 
-        })
+        // })
 
-        test("fail", ()=> {
-            expect(enhancer.fail()).toBe()
-            expect(enhancer.fail()).toBe()
-            expect(enhancer.fail()).toBe()
-            expect(()=> enhancer.fail()).toThrow()
+        // test("fail", ()=> {
+        //     expect(enhancer.fail()).toBe()
+        //     expect(enhancer.fail()).toBe()
+        //     expect(enhancer.fail()).toBe()
+        //     expect(()=> enhancer.fail()).toThrow()
 
-        })
-}
+        // })
+
+    })
